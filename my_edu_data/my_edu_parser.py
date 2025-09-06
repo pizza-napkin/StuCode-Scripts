@@ -39,7 +39,7 @@ class MyEduParser:
     def get_table_headers(self):
         ret_vals = []
         soup = BeautifulSoup(self.content, 'html.parser')
-        tables = soup.find('table', attrs={'style': 'margin-left: 0px; width: 718px;'}) # NTS: gets the first table which SHOULD be the table on the students hopefully not staff
+        tables = soup.find('table', attrs={'class': 'table row-borders dtfc-has-start dtfc-has-left dataTable'}) # NTS: gets the first table which SHOULD be the table on the students hopefully not staff
 
         spans = tables.find_all('span', attrs={'class': 'dt-column-title'}) # gets rows
         for i in spans: #2do: change to list comprehension to speed it up
